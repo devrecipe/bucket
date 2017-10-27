@@ -1,0 +1,10 @@
+language: node_js
+node_js:
+  - "node"
+  - "8"
+
+service:
+  - docker
+
+install:
+  - docker build -t devrecipe/bucket .
