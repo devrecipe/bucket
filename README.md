@@ -1,10 +1,12 @@
-# Bucket
+## Bucket
+
+![Travis CI build status](https://travis-ci.org/devrecipe/bucket.svg?branch=master)
 
 Bucket is an objects storage server built in NodeJS to serve apps as a standalone microservice via RESTful API.
 
 The bucket supports Gzip compression for static content and access logs.
 
-## How to deploy using Docker
+### How to deploy using Docker
 
 In your docker host, run a new container
 
@@ -14,7 +16,7 @@ And retrieve the container's IP address
 
 `docker inspect --format '{{.NetworkSettings.IPAddress}}' my-bucket`
 
-## How to use the API
+### How to use the API
 
 1.  Retrieve an object from the bucket
 
@@ -39,14 +41,14 @@ In case of an error, (like the requested object doesn't exist) a JSON error will
 }
 ```
 
-## Securing the bucket
+### Securing the bucket
 
 Coming soon, meanwhile we'd be happy to hear from you some feedbacks
 
-## Contributors
+### Contributors
 
 * Mohamed Anas Ben Othman
 
-## License
+### License
 
 &copy; 2017 - MIT License
