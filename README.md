@@ -1,4 +1,4 @@
-## Bucket
+# Bucket
 
 ![Travis CI build status](https://travis-ci.org/devrecipe/bucket.svg?branch=master)
 
