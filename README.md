@@ -1,6 +1,10 @@
 # Bucket
 
-![Travis CI build status](https://travis-ci.org/devrecipe/bucket.svg?branch=master)
+![Travis CI build status](https://img.shields.io/travis/devrecipe/bucket.svg)
+![Docker build status](https://img.shields.io/docker/build/devrecipe/bucket.svg)
+![Docker pulls count](https://img.shields.io/docker/pulls/devrecipe/bucket.svg)
+![Docker stars count](https://img.shields.io/docker/stars/devrecipe/bucket.svg)
+![License](https://img.shields.io/github/license/devrecipe/bucket.svg)
 
 Bucket is an objects storage server built in NodeJS to serve apps as a standalone microservice via RESTful API.
 
@@ -48,6 +52,7 @@ Coming soon, meanwhile we'd be happy to hear from you some feedbacks
 ### Contributors
 
 * Mohamed Anas Ben Othman
+* Zied Guetari
 
 ### License
 
