@@ -48,6 +48,7 @@ Coming soon, meanwhile we'd be happy to hear from you some feedbacks
 ### Contributors
 
 * Mohamed Anas Ben Othman
+* Zied Guetari
 
 ### License
 
