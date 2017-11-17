@@ -13,7 +13,8 @@ var port = process.env.PORT || 1337
 var uploader = multer({
     storage: multer.diskStorage({
         destination: function(req, file, cb) {
-            cb(null, './objects/')
+           const dir = './objects/'
+           fs.mkdir(dir, err => cb(err, dir))
         },
         filename: function(req, file, cb) {
             crypto.pseudoRandomBytes(16, function (err, raw) {
