@@ -4,6 +4,7 @@ var express = require('express')
 var multer = require('multer')
 var morgan = require('morgan')
 var crypto = require('crypto')
+var cors = require('cors')
 var path = require('path')
 var hat = require('hat')
 var fs = require('fs')
@@ -12,11 +13,16 @@ var app = express()
 var port = process.env.PORT || 1337
 var uploader = multer({
     storage: multer.diskStorage({
-        destination: function(req, file, cb) {
-           const dir = './objects/'
-           fs.mkdir(dir, err => cb(err, dir))
+        destination: function (req, file, cb) {
+            const dir = './objects/'
+            fs.exists(dir, function (exists) {
+                if (exists)
+                    cb(null, './objects/')
+                else
+                    fs.mkdir(dir, err => cb(err, dir))
+            })
         },
-        filename: function(req, file, cb) {
+        filename: function (req, file, cb) {
             crypto.pseudoRandomBytes(16, function (err, raw) {
                 if (err) return cb(err)
                 cb(null, hat() + path.extname(file.originalname))
@@ -25,6 +31,7 @@ var uploader = multer({
     })
 })
 
+app.use(cors())
 app.use(compression())
 app.use(morgan('tiny'))
 app.use(bodyParser.json())
