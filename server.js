@@ -61,7 +61,7 @@ app.post('/upload', uploader.single('file'), function (req, res) {
     })
 })
 
-app.delete('/onject/:fileId', (req, res) => {
+app.delete('/object/:fileId', (req, res) => {
     var file = process.cwd() + '/objects/' + req.params.fileId
 
     fs.exists(file, function (exists) {
