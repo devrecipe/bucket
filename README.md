@@ -34,7 +34,7 @@ And retrieve the container's IP address
 
 3.  Delete existin object from the bucket
     
-    Send a DELETE request `/oject/*` where `*` is the object id, the output should be a json with this message `The requested object is deleted`.
+    Send a DELETE request `/object/*` where `*` is the object id, the output should be a json with this message `The requested object is deleted`.
 
 In case of an error, (like the requested object doesn't exist) a JSON error will be returned
 
