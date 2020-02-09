@@ -24,7 +24,7 @@ And retrieve the container's IP address
 
 1.  Retrieve an object from the bucket
 
-    Send a GET request `/oject/*` where `*` is the object id, the output should be the file from server.
+    Send a GET request `/object/*` where `*` is the object id, the output should be the file from server.
 
 2.  Add a new object to the bucket
 
