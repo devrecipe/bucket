@@ -25,7 +25,7 @@ var uploader = multer({
         filename: function (req, file, cb) {
             crypto.pseudoRandomBytes(16, function (err, raw) {
                 if (err) return cb(err)
-                cb(null, hat() + path.extname(file.originalname))
+                cb(null, hat() + path.extname(file.originalname.toLowerCase()))
             })
         }
     })
@@ -38,7 +38,7 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 
 app.get('/object/:fileId', (req, res) => {
-    var file = process.cwd() + '/objects/' + req.params.fileId
+    var file = process.cwd() + '/objects/' + req.params.fileId.toLowerCase()
 
     fs.exists(file, function(exists) {
         if (exists) {
@@ -54,7 +54,7 @@ app.get('/object/:fileId', (req, res) => {
 
 app.post('/upload', uploader.single('file'), function (req, res) {
     res.json({
-        filename: req.file.filename,
+        filename: req.file.filename.toLowerCase(),
         mimetype: req.file.mimetype,
         encoding: req.file.encoding,
         size: req.file.size
@@ -62,7 +62,7 @@ app.post('/upload', uploader.single('file'), function (req, res) {
 })
 
 app.delete('/object/:fileId', (req, res) => {
-    var file = process.cwd() + '/objects/' + req.params.fileId
+    var file = process.cwd() + '/objects/' + req.params.fileId.toLowerCase()
 
     fs.exists(file, function (exists) {
         if (exists) {
